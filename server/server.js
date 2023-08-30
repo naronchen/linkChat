@@ -1,17 +1,21 @@
-const express = require('express') //import Express library
-const app = express() //creates a new Express application
-
+const express = require('express') 
 const cors = require('cors');
 
-// Allow only certain origins, adjust as needed
-app.use(cors({
-  origin: ['http://localhost:5000', 'http://localhost:5173']
-}));
+const corsOptions = require('./config/corsConfig');
+const redirectRoutes = require('./routes/redirect');
 
-app.get("/api", (req,res) => {
+const app = express() 
+app.use(cors(corsOptions));
+app.use('/redirect', redirectRoutes);
+
+
+
+app.get("/apiTest", (req,res) => {
     res.json({"users":["userOne", "userTwo", "userThree", "usrFour"]})
 })
 
 app.listen(5000, () => {
     console.log("Server started on port 5000")
 })
+
+
