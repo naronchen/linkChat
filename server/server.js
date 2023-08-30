@@ -9,7 +9,6 @@ app.use(cors(corsOptions));
 app.use('/redirect', redirectRoutes);
 
 
-
 app.get("/apiTest", (req,res) => {
     res.json({"users":["userOne", "userTwo", "userThree", "usrFour"]})
 })
