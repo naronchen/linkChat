@@ -10,7 +10,7 @@ exports.redirect = async (req, res) => {
     // sending the userInput
     const userInput = req.body.text;
     try {
-      const aiResponse = await axios.post('https://localhost:9000', { input: userInput });
+      const aiResponse = await axios.post('http://localhost:9000/mockAI', { input: userInput });
       const aiText = aiResponse.data.output;
   
       res.status(200).json({ output: aiText });

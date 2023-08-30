@@ -5,6 +5,7 @@ const corsOptions = require('./config/corsConfig');
 const redirectRoutes = require('./routes/redirect');
 
 const app = express() 
+app.use(express.json());
 app.use(cors(corsOptions));
 app.use('/redirect', redirectRoutes);
 

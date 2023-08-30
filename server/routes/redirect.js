@@ -1,7 +1,7 @@
 const express = require('express');
-const aiController = require('../controllers/aiController');
+const redirectController = require('../controllers/redirectController');
 const router = express.Router();
 
-router.post('/', aiController.redirect);
+router.post('/', redirectController.redirect);
 
 module.exports = router;
