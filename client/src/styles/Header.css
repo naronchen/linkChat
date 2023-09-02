@@ -5,7 +5,6 @@
     flex-direction: column; /* This line makes items stack vertically */
     justify-content: center;
     align-items: center;
-    font-family: 'Nunito', sans-serif;
   }
 
   .robot-img {
