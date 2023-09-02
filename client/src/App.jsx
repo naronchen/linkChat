@@ -17,6 +17,11 @@ function App() {
 //         )
 //   }, [])
 
+  const [userInput, setUserInput] = useState('');
+
+  const handleInputChange = (newValue) => {
+    setUserInput(newValue);
+  };
   
   return (
     <div>
@@ -29,7 +34,8 @@ function App() {
         )} */}
 
         <Header />
-        <UserInput />
+        <h3>{userInput}</h3>
+        <UserInput value={userInput} onChange={handleInputChange} />
         
     </div>
   )
