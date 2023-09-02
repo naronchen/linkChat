@@ -1,0 +1,15 @@
+.header {
+    background-color: rgba(156, 159, 225, 0.5); /* 50% opacity */
+    height: 80px;
+    display: flex;
+    flex-direction: column; /* This line makes items stack vertically */
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .robot-img {
+    width: 40px;
+    height: 40px;
+  }
+  
