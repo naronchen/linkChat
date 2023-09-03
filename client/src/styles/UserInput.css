@@ -1,18 +1,33 @@
 .input-box {
-    position: fixed;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .input-text {
-    height: 40px;
-    width: 80%;
-    border: none;
-    background-color: rgba(217, 217, 217, 0.7); 
-    border-radius: 10px;
-    padding-left: 10px;
-    outline: none;
-  }
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  background-color: rgba(217, 217, 217, 0.7);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  width: 80%;
+}
+
+.input-text {
+  flex-grow: 1;
+  height: 40px;
+  border: none;
+  background-color: transparent;  
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.send-img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px; 
+}
