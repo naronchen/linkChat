@@ -3,7 +3,7 @@ import '../styles/UserInput.css'
 import sendImg from '../assets/send.png'
 
 // @TODO responsive height on user input
-function UserInput({sendToBoard}) {
+function UserInput({sendToBoard, sendToServer}) {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (e) => {
@@ -12,13 +12,15 @@ function UserInput({sendToBoard}) {
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter'){
-            sendToBoard(inputValue, 'chatbot')
+            sendToBoard(inputValue, 'user')
+            sendToServer(inputValue, 'user')
             setInputValue('')
         }
     }
 
     const handleClick = (e) => {
         sendToBoard(inputValue, 'user')
+        sendToServer(inputValue, 'user')
         setInputValue('')
     }
 
