@@ -17,12 +17,15 @@ function App() {
 //         )
 //   }, [])
 
-  const [userInput, setUserInput] = useState('');
+    const [messages, setMessages] = useState([]);
 
-  const handleInputChange = (newValue) => {
-    setUserInput(newValue);
-  };
+    const sendToBoard = (newValue) => {
+      const newMessage = <div key={newValue}>{newValue}</div>;
+      setMessages((prevMessages) => [...prevMessages, newMessage]);
+    };
+
   
+  // @TODO there is a warning for same cotent in messages, Key should be unique
   return (
     <div>
         {/* {(typeof backendData.users === 'undefined') ? (
@@ -34,8 +37,10 @@ function App() {
         )} */}
 
         <Header />
-        <h3>{userInput}</h3>
-        <UserInput value={userInput} onChange={handleInputChange} />
+        <div>
+          {messages.map((message) => message)}
+        </div>
+        <UserInput sendToBoard={sendToBoard} />
         
     </div>
   )

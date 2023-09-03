@@ -1,23 +1,45 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../styles/UserInput.css'
 import sendImg from '../assets/send.png'
 
 // @TODO responsive height on user input
-function UserInput({inputValue, onChange}) {
+function UserInput({sendToBoard}) {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+      };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter'){
+            sendToBoard(inputValue)
+            setInputValue('')
+        }
+    }
+
+    const handleClick = (e) => {
+        sendToBoard(inputValue)
+        setInputValue('')
+    }
+
   return (
     <div className="input-box">
         <div className="input-container">
-        <input className="input-text" 
-                type="text" 
-                placeholder="Type something..."
-                value={inputValue}
-                onChange={(e) => onChange(e.target.value)}
-                />
-        <img  src={sendImg} 
-            alt="Send" 
-            className="send-img"/>
+            
+            <input className="input-text" 
+                    type="text" 
+                    placeholder="Type something..."
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    onKeyDown ={handleKeyPress}
 
-</div>  
+            />
+            <img  src={sendImg} 
+                alt="Send" 
+                className="send-img"
+                onClick={handleClick}
+            />
+        </div>  
     </div>
   )
 }

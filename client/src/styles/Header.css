@@ -1,10 +1,11 @@
 .header {
-    background-color: rgba(156, 159, 225, 0.5); /* 50% opacity */
+    background-color: rgba(156, 159, 225, 0.5); 
     height: 80px;
     display: flex;
-    flex-direction: column; /* This line makes items stack vertically */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
   }
 
   .robot-img {

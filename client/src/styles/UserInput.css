@@ -29,5 +29,15 @@
 .send-img {
   width: 30px;
   height: 30px;
-  margin-left: 10px; 
+  margin-left: 10px;
+  cursor: pointer; 
+  transition: transform 0.3s ease; 
+}
+
+.send-img:hover {
+  transform: scale(1.1); 
+}
+
+.send-img:active {
+  transform: scale(0.85); 
 }
