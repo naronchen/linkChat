@@ -12,13 +12,13 @@ function UserInput({sendToBoard}) {
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter'){
-            sendToBoard(inputValue)
+            sendToBoard(inputValue, 'chatbot')
             setInputValue('')
         }
     }
 
     const handleClick = (e) => {
-        sendToBoard(inputValue)
+        sendToBoard(inputValue, 'user')
         setInputValue('')
     }
 

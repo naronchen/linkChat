@@ -1,0 +1,9 @@
+.text-main-Container{
+    padding: 20px 0px;
+}
+
+.textContainer {
+    max-width: 80%; 
+    word-wrap: break-word; 
+    margin: 0px auto;
+}

@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import Header from './components/Header'
 import UserInput from './components/UserInput'
+import ChatMessage from './components/ChatMessage';
+import './styles/App.css';
+
 function App() {
   
 //   const [backendData, setBackendData] = useState([{}]) 
@@ -19,8 +22,8 @@ function App() {
 
     const [messages, setMessages] = useState([]);
 
-    const sendToBoard = (newValue) => {
-      const newMessage = <div key={newValue}>{newValue}</div>;
+    const sendToBoard = (newValue, type) => {
+      const newMessage = <ChatMessage key={newValue} textValue = {newValue} type={type} />;
       setMessages((prevMessages) => [...prevMessages, newMessage]);
     };
 
@@ -37,7 +40,7 @@ function App() {
         )} */}
 
         <Header />
-        <div>
+        <div className="board-Container">
           {messages.map((message) => message)}
         </div>
         <UserInput sendToBoard={sendToBoard} />
