@@ -13,23 +13,24 @@ const setupDatabase = () => {
         });
 
     historyDB.run(`
-    CREATE TABLE IF NOT EXISTS ChatSessions
-    (
-        sessionID INTEGER PRIMARY KEY AUTOINCREMENT,
-        lastUpdated DATETIME DEFAULT CURRENT_TIMESTAMP
-    );
+        CREATE TABLE IF NOT EXISTS ChatSessions
+        (
+            sessionID INTEGER PRIMARY KEY AUTOINCREMENT,
+            lastUpdated DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
     `)
 
     historyDB.run(`
     CREATE TABLE IF NOT EXISTS ChatMessages
-    (
-        messageID INTEGER PRIMARY KEY AUTOINCREMENT,
-        sessionID INTEGER,
-        messageText TEXT,
-        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+        (
+            messageID INTEGER PRIMARY KEY AUTOINCREMENT,
+            sessionID INTEGER,
+            senderType TEXT CHECK( senderType IN ('user', 'chatbot') ),
+            messageText TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
 
-        FOREIGN KEY(sessionID) REFERENCES ChatSessions(sessionID)
-    );
+            FOREIGN KEY(sessionID) REFERENCES ChatSessions(sessionID)
+        );
     `)
 
     return historyDB

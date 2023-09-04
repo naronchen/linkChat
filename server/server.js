@@ -2,15 +2,15 @@ const express = require('express')
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 
+const getHistoryDb = require('./dbConnection/db');
 const corsOptions = require('./config/corsConfig');
-const setupDatabase = require('./databaseSetup');
 const redirectRoutes = require('./routes/redirect');
 const historyRoutes = require('./routes/history')
 
 const app = express() 
 app.use(express.json());
 app.use(cors(corsOptions));
-const historyDB = setupDatabase();  // Initialize database
+getHistoryDb(); // Initialize singleton databaseb connection
 
 app.use('/redirect', redirectRoutes);
 app.use('/history', historyRoutes)
