@@ -17,6 +17,24 @@ function App() {
       setMessages((prevMessages) => [...prevMessages, newMessage]);
     };
 
+    useEffect(() => {
+      const fetchHistory = async () => {
+        try {
+          setMessages([])
+          
+          //@TODO use env variable and change this server url
+          const response = await axios.get('http://localhost:5000/history')
+          response.data.output.forEach((message) => {
+            sendToBoard(message.messageText, message.senderType)
+          })
+        } catch (error) {
+          console.error("Error fetching history")
+        }
+      };
+
+      fetchHistory();
+    },[])
+
     const sendToServer = async (userInput) => {
       try {
         const response = await axios.post('http://localhost:5000/redirect', {

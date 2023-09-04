@@ -10,7 +10,7 @@ exports.history = async (req, res) => {
     }
   
     try {
-      let sql = "SELECT * FROM ChatMessages ORDER BY timestamp ASC";
+      let sql = "SELECT senderType, messageText FROM ChatMessages ORDER BY timestamp ASC";
       let db = getHistoryDb();
 
       db.all(sql, [], (err, rows) => {
