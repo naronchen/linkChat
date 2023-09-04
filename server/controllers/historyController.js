@@ -1,6 +1,6 @@
 const axios = require('axios')
 const sqlite3 = require('sqlite3').verbose();
-
+const getHistoryDb = require('../dbConnection/db');
 
 exports.history = async (req, res) => {
     // verification for future deployment
@@ -10,8 +10,18 @@ exports.history = async (req, res) => {
     }
   
     try {
-      res.json({"Database":"Hello"})
+      let sql = "SELECT * FROM ChatMessages ORDER BY timestamp ASC";
+      let db = getHistoryDb();
+
+      db.all(sql, [], (err, rows) => {
+        if (err) {
+          console.error('Database Error:', err);
+          return res.status(500).json({ error: 'Database Error' });
+        } 
+        res.status(200).json({ output: rows });
+      })
     
+
 
     // res.status(200).json({ output: aiText });
     } catch (error) {

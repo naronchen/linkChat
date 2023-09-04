@@ -10,7 +10,7 @@ const historyRoutes = require('./routes/history')
 const app = express() 
 app.use(express.json());
 app.use(cors(corsOptions));
-getHistoryDb(); // Initialize singleton databaseb connection
+getHistoryDb(); // Initialize singleton db connection
 
 app.use('/redirect', redirectRoutes);
 app.use('/history', historyRoutes)
