@@ -2,6 +2,7 @@ const axios = require('axios')
 const sqlite3 = require('sqlite3').verbose();
 const getHistoryDb = require('../dbConnection/db');
 
+
 exports.redirect = async (req, res) => {
     // @TODO make middleware handle this verification
     // verification for future deployment
@@ -48,7 +49,7 @@ exports.redirect = async (req, res) => {
 
       res.status(200).json({ output: aiText });
     } catch (error) {
-      console.error('AI Model Error:', error);
+      console.error('Redirecting to AI Model Error:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   };
