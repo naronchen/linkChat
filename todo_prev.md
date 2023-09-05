@@ -1,0 +1,8 @@
+- [ ] Build Tool
+- [ ] Prevent Throttling at backend  
+- [ ] Prevent throttling at front-end
+- [ ] Handle Server Error on Front-end
+- [ ] Scrolling follow chatbot answer
+- [ ] Keyboard Shortcut: Focus Chat Input
+- [ ] Keyboard Shortcut: Copy last response
+- [ ] Special Command: Clear chat history
