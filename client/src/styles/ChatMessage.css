@@ -1,9 +1,24 @@
 .text-main-Container{
+    position: relative;
     padding: 20px 0px;
+}
+
+.robot-container {
+    position: absolute;
+    margin-top: -8px;
+
 }
 
 .textContainer {
     max-width: 80%; 
     word-wrap: break-word; 
-    margin: 0px auto;
+    margin-left: 50px;
+}
+
+.robot-img-message {
+    /* position: fixed; */
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+
 }

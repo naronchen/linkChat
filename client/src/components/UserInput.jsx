@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import '../styles/UserInput.css'
 import sendImg from '../assets/send.png'
 
+
 // @TODO responsive height on user input
 function UserInput({sendToBoard, sendToServer}) {
     const [inputValue, setInputValue] = useState('');
