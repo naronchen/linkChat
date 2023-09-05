@@ -1,6 +1,6 @@
 Major
 - [x] Build Tool
-- [ ] Request Synchronization at backend  
+- [x] Request Synchronization at backend  
 - [ ] Request Synchronization at backend TESTED
 - [ ] Request Synchronization at front-end
 - [ ] Handle Server Error on Front-end
