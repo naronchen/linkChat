@@ -1,7 +1,7 @@
 
 const redirectController  = require('../controllers/redirectController');
 
-test('redirect function', async () => {
+test('redirectController function unit test', async () => {
     const mockReq = {
       headers: { 'x-api-key': 'test-key' },
       body: { "text" : "some text" }
@@ -20,4 +20,4 @@ test('redirect function', async () => {
 
 
   });
-  
+

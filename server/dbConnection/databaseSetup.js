@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 
 const setupDatabase = () => {
-    let historyDB = new sqlite3.Database
+    historyDB = new sqlite3.Database
         (".././database/history1.db", 
         sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, 
         (err) => { 

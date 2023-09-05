@@ -1,7 +1,9 @@
 Major
 - [x] Build Tool
-- [x] Request Synchronization at backend  
-- [ ] Request Synchronization at backend TESTED
+- [x] Request Synchronization at backend
+- [x] Fix bug in req body, Fix bug in redirect status
+- [x] Properly close app connection in test
+- [x] Request Synchronization at backend TESTED
 - [ ] Request Synchronization at front-end
 - [ ] Handle Server Error on Front-end
 - [ ] Scrolling follow chatbot answer

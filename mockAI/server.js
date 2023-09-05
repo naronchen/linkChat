@@ -5,7 +5,9 @@ app.use(express.json());
 
 // Mock AI response
 app.post('/mockAI', (req, res) => {
-  res.json({ output: 'Hello from mockAI responding to: ' + `${req.body.input}` });
+  setTimeout(() => {
+    res.json({ output: 'Hello from mockAI responding to: ' + `${req.body.input}` });
+  }, 3000 )
 });
 
 app.get("/apiTest", (req,res) => {
