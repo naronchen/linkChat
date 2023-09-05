@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios';
 
+import loadingGif from './assets/loading.gif'
 import Header from './components/Header'
 import UserInput from './components/UserInput'
 import ChatMessage from './components/ChatMessage';
@@ -9,7 +10,7 @@ import './styles/App.css';
 function App() {
 
     const [messages, setMessages] = useState([]);
-
+    const [loading, setLoading] = useState(false);
     // @TODO automatic scrolling to the bottom
     // @TODO there is a warning for same cotent in messages, Key should be unique
     const sendToBoard = (userInput, type) => {
@@ -36,17 +37,20 @@ function App() {
     },[])
 
     const sendToServer = async (userInput) => {
+      setLoading(true);
       try {
         const response = await axios.post('http://localhost:5000/redirect', {
           text: userInput
         });
-        console.log('Server Response:', response.data.output);
+        // console.log('Server Response:', response.data.output);
         sendToBoard(response.data.output, 'chatbot')
 
       //@TODO Handle error
       } catch (error) {
         console.log('Error:', error);
-        sendToBoard('Internal Server Error', 'chatbot')
+        sendToBoard('Internal Server Error, Try Again Later', 'chatbot')
+      } finally {
+        setLoading(false)
       }
     }
 
@@ -57,8 +61,15 @@ function App() {
         <div className="board-Container">
           {messages.map((message) => message)}
         </div>
+        {loading && 
+        <div className="loading-Container"> 
+            <span className="loading-text">Loading</span>
+          <img src={loadingGif} alt="Loading..." className="loading" />
+        </div>
+        }
         <UserInput sendToBoard={sendToBoard} 
-                    sendToServer={sendToServer} />
+                    sendToServer={sendToServer}
+                    loading={loading} />
     </div>
   )
 }

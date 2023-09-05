@@ -1,5 +1,5 @@
 .header {
-    background-color: rgba(156, 159, 225, 0.5); 
+    background-color: var(--theme-color); 
     height: 80px;
     display: flex;
     flex-direction: column; 
