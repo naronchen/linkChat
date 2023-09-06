@@ -11,10 +11,11 @@ Major
 - [x] Handle Server Error on Front-end
 - [x] Special Command: Clear chat history - Backend Implementation
 - [x] Special Command: Clear chat history - Frontend Implementation
+- [x] Update Readme
 - [ ] Scrolling follow chatbot answer
+- [ ] disable sending through return key on loading
 - [ ] Keyboard Shortcut: Focus Chat Input
 - [ ] Keyboard Shortcut: Copy last response
-- [ ] fine tunning GPT3.5 with linkedin message data
 
 Minor
-- [ ] Prevent empty message
+- [ ] Prevent empty message?
