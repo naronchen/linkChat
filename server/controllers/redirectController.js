@@ -39,17 +39,14 @@ exports.redirect = async (req, res) => {
 
     try {
 
-      //@TODO send it with an api key or sth, so not exposing the AImodel
-      //working with mockAI
+      // @TODO send it with an api key or sth, so not exposing the AImodel
+      // working with mockAI
       // const aiResponse = await axios.post('http://localhost:9000/mockAI', { input: userInput });
       // const aiText = aiResponse.data.output;
 
-      console.log("sending a request to gpt")
       const fs = require('fs');
       const context = fs.readFileSync('../data_clean/cleaned_messages.txt', 'utf8');
       const aiText = await getGPT3Response(context, userInput); 
-      console.log(`my response ${aiText}`)
-
 
       let sql =  `INSERT INTO ChatMessages (sessionID, messageText, senderType) VALUES (?, ?, 'chatbot')`
       db.run(sql, [sessionID, aiText], function(err){
@@ -59,7 +56,6 @@ exports.redirect = async (req, res) => {
       })
       res.status(200).json({ output: aiText });
     } catch (error) {
-
       console.error('Redirecting to AI Model Error:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }

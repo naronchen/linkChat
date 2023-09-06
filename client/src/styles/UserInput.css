@@ -32,6 +32,8 @@
   margin-left: 10px;
   cursor: pointer; 
   transition: transform 0.3s ease; 
+  background-color: transparent;
+
 }
 
 .send-img:hover {

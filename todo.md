@@ -8,10 +8,11 @@ Major
 - [x] SetUp to GPT3.5 connection
 - [x] Line Break in front-end
 - [x] Handle Server Error on Front-end
+- [x] Special Command: Clear chat history - Backend Implementation
+- [x] Special Command: Clear chat history - Frontend Implementation
 - [ ] Scrolling follow chatbot answer
 - [ ] Keyboard Shortcut: Focus Chat Input
 - [ ] Keyboard Shortcut: Copy last response
-- [ ] Special Command: Clear chat history
 - [ ] fine tunning GPT3.5 with linkedin message data
 
 Minor

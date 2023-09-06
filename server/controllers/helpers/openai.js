@@ -5,7 +5,7 @@ async function getGPT3Response(context, userInput) {
     const api_key = process.env.OPENAI_API_KEY;
 
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-        model: 'gpt-3.5-turbo-0613', 
+        model: 'gpt-3.5-turbo-0613', //'gpt-4-0613'
         max_tokens: 500, 
       messages: [
         {

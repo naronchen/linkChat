@@ -39,11 +39,16 @@ function App() {
     const sendToServer = async (userInput) => {
       setLoading(true);
       try {
-        const response = await axios.post('http://localhost:5000/redirect', {
-          text: userInput
-        });
-        // console.log('Server Response:', response.data.output);
-        sendToBoard(response.data.output, 'chatbot')
+        let response;
+        if (userInput === '/deleteAll') {
+          setMessages([])
+          response = await axios.post('http://localhost:5000/specialcmds/deleteAll');
+        } else {
+          response = await axios.post('http://localhost:5000/redirect', {
+            text: userInput
+          });
+          sendToBoard(response.data.output, 'chatbot');
+        }
 
       //@TODO Handle error
       } catch (error) {

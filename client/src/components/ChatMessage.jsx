@@ -15,12 +15,15 @@ function ChatMessage({textValue, type}) {
               </div>
             )}
             <div className="textContainer">
-            {textValue.split('\n').map((str, index, array) => 
-              index === array.length - 1 ? str : <>
-                {str}
-                <br />
-              </>
-            )}
+            <div className="textContainer">
+              {textValue.split('\n').map((str, index) => 
+                <React.Fragment key={index}>
+                  {str}
+                  {index !== textValue.split('\n').length - 1 && <br />}
+                </React.Fragment>
+              )}
+            </div>
+
             </div>
         </div>
   )

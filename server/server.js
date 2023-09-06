@@ -6,6 +6,8 @@ const getHistoryDb = require('./dbConnection/db');
 const corsOptions = require('./config/corsConfig');
 const redirectRoutes = require('./routes/redirect');
 const historyRoutes = require('./routes/history')
+const specialCmdsRoutes = require('./routes/specialCmds');
+
 
 const app = express() 
 app.use(express.json());
@@ -16,6 +18,7 @@ getHistoryDb(); // Initialize singleton db connection
 
 app.use('/redirect', redirectRoutes);
 app.use('/history', historyRoutes)
+app.use('/specialcmds', specialCmdsRoutes);
 
 
 app.get("/apiTest", (req,res) => {
