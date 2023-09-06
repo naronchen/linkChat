@@ -20,5 +20,4 @@ for line in new_checked_items:
 
 
 
-
 shutil.copy("todo.md", "todo_prev.md")

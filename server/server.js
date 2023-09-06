@@ -10,6 +10,8 @@ const historyRoutes = require('./routes/history')
 const app = express() 
 app.use(express.json());
 app.use(cors(corsOptions));
+require('dotenv').config(); 
+
 getHistoryDb(); // Initialize singleton db connection
 
 app.use('/redirect', redirectRoutes);
