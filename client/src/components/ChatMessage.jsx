@@ -15,7 +15,12 @@ function ChatMessage({textValue, type}) {
               </div>
             )}
             <div className="textContainer">
-                {textValue}
+            {textValue.split('\n').map((str, index, array) => 
+              index === array.length - 1 ? str : <>
+                {str}
+                <br />
+              </>
+            )}
             </div>
         </div>
   )

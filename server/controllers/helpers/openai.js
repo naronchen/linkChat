@@ -6,11 +6,11 @@ async function getGPT3Response(context, userInput) {
 
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: 'gpt-3.5-turbo-0613', 
-        max_tokens: 200, 
+        max_tokens: 500, 
       messages: [
         {
           role: 'system',
-          content: 'assistant CONCISE summarize, organize and analyze linkedin messages in the context,user is Naron, 150maxtoken',
+          content: 'CONCISELY summarize, organize and analyze linkedin messages in the context,user is Naron, 400maxtoken',
         },
         {
           role: 'user',

@@ -6,7 +6,8 @@ Major
 - [x] Request Synchronization at backend TESTED
 - [x] Request Synchronization at front-end
 - [x] SetUp to GPT3.5 connection
-- [ ] Handle Server Error on Front-end
+- [x] Line Break in front-end
+- [x] Handle Server Error on Front-end
 - [ ] Scrolling follow chatbot answer
 - [ ] Keyboard Shortcut: Focus Chat Input
 - [ ] Keyboard Shortcut: Copy last response
