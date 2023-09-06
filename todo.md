@@ -1,4 +1,5 @@
 Major
+- [x] Update Doc
 - [x] Build Tool
 - [x] Request Synchronization at backend
 - [x] Fix bug in req body, Fix bug in redirect status
