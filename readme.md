@@ -7,7 +7,7 @@ It helps me organize, summarize, prioritize my incoming messages.
 Also provides general information and insights as well as generating personalized templates.
 
 
-#### Project Demo: 
+#### _Project Demo_: 
 
 <img src='https://i.imgur.com/kPPTYhd.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
